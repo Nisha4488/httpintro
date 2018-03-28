@@ -1,11 +1,11 @@
-let http = require('http');
-let port = process.env.PORT || 8000;
+const http = require('http');
+const port = process.env.PORT || 8000;
 
-let server = http.createServer(function(req, res) {
+const server = http.createServer((req, res)=>{
   res.setHeader('Content-Type', 'text/plain');
   res.end('Hello world');
 });
 
-server.listen(port, function() {
+server.listen(port, ()=>{
   console.log('Listening on port', port);
 });

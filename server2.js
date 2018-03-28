@@ -1,16 +1,14 @@
-let http = require('http');
-let port = process.env.PORT || 8000;
+const http = require('http');
+const port = process.env.PORT || 8000;
 
 
-
-
-let server = http.createServer(function(req, res) {
+const server = http.createServer(function(req, res) {
 
   if(req.method === "GET" && req.url === "/hello"){
     res.setHeader('Content-Type', 'text/plain');
     res.end('Hello world');
 
-  }else if (req.method === "POST" && req.url === "/user"){
+  }else if (req.url === "/user"){
     let user = {
       name: "Kevin",
       age: 23,
